@@ -3,7 +3,7 @@ This tiny FireWall Compiler consists of a small suite of bash and python scripts
 
 
 # How to install
-1. Copy or link /fwc* to /usr/local/sbin/
+1. Copy or link fwc* to /usr/local/sbin/
 2. copy content of repo to /etc/firewall/
 
 
