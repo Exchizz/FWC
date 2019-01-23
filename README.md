@@ -19,7 +19,7 @@ This tiny FireWall Compiler consists of a small suite of bash and python scripts
     ````
     bash dump_fw.sh INPUT OUTPUT LabnetToLocal
     ````
-2. If DRY_RUN=1 is sat when up.sh is run, the iptables commands will be printed to stdout.
+2. If DRY_RUN=1 is sat when up.sh is run, the iptable commands will be printed to stdout and are not executed.
 
 # Description
 This firewall compiler is utilizing an Iptables designb developmed by John Hallam at SDU. The design split iptables rules into policies and protocols.
