@@ -1,6 +1,21 @@
 # FWC
 This tiny FireWall Compiler consists of a small suite of bash and python scripts to ease the process of maintaining an iptables firewall.
 
+
+# How to install
+1. Copy or link /fwc* to /usr/local/sbin/
+2. copy content of repo to /etc/firewall/
+
+
+# Usage
+1. Define zones in **fwc_zones**
+2. Add policies to **fwc_policies**
+3. Run **fwc** as root
+4. Run sudo bash /etc/firewall/up.bash
+5. If you wanna create the rules as the host boots, run /etc/firewall/up.bash during startup.
+
+
+# Description
 This firewall compiler is utilizing an Iptables designb developmed by John Hallam at SDU. The design split iptables rules into policies and protocols.
 
 * proto.sh defines protcols such as http, https, ntp etc.
@@ -43,3 +58,6 @@ The FWC consists of three scripts:
  
 * fwc_zones - This script generates zones such as. "LabnetToLocal", "LocalToLanet" etc. Which interface "Labnet" is associated with is defined in var.sh
 * fwc - This scripts run fwc_policy.py and fwc_zones.py and redirects their output to bash scripts in /etc/firewall/generated/
+
+
+
