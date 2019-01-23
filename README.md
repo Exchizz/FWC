@@ -14,6 +14,12 @@ This tiny FireWall Compiler consists of a small suite of bash and python scripts
 4. Run sudo bash /etc/firewall/up.bash
 5. If you wanna create the rules as the host boots, run /etc/firewall/up.bash during startup.
 
+## Tips:
+1. To print your current iptables configuration run:
+    ````
+    bash dump_fw.sh INPUT OUTPUT LabnetToLocal
+    ````
+2. If DRY_RUN=1 is sat when up.sh is run, the iptables commands will be printed to stdout.
 
 # Description
 This firewall compiler is utilizing an Iptables designb developmed by John Hallam at SDU. The design split iptables rules into policies and protocols.
