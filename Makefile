@@ -2,9 +2,9 @@ COMPONENTS=firewall fwc
 
 install:
 	for A in ${COMPONENTS}; do make -C $$A install; done
+	install -D firewall.service /etc/systemd/system/firewall.service
 
 enable:
-	install -D firewall.service /etc/systemd/system/firewall.service
 	@systemctl enable firewall
 
 disable:
