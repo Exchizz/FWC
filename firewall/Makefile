@@ -15,3 +15,6 @@ $(foreach file,$(FILES),$(eval $(call GENERIC_template,$(file))))
 
 $(DST):
 	install -m 700 -g root -o root -D $? $(PREFIX)$?
+
+clean:
+	@rm -r $(PREFIX)
