@@ -3,8 +3,10 @@ This tiny FireWall Compiler consists of a small suite of bash and python scripts
 
 
 # How to install
-1. Copy or link fwc* to /usr/local/sbin/
-2. copy content of repo to /etc/firewall/
+1. clone rep
+2. run **make install**
+3. run **make enable** to run the firewall configuration on boot
+The firewall can be uninstalled by runnig **make clean**
 
 
 # Usage
@@ -12,7 +14,6 @@ This tiny FireWall Compiler consists of a small suite of bash and python scripts
 2. Add policies to **fwc_policies**
 3. Run **fwc** as root
 4. Run sudo bash /etc/firewall/up.bash
-5. If you wanna create the rules as the host boots, run /etc/firewall/up.bash during startup.
 
 ## Tips:
 1. To print your current iptables configuration run:
