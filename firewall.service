@@ -1,0 +1,14 @@
+[Unit]
+Description=Iptables firewall
+DefaultDependencies=no
+After=systemd-sysctl.service
+Before=sysinit.target
+
+[Service]
+Type=oneshot
+ExecStart=/etc/firewall/up.sh
+ExecReload=/etc/firewall/up.sh
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
