@@ -163,6 +163,17 @@ LOPRIV=0:511
 	[ $QUIET = yes ] || echo -n " $P"
     done
 
+
+
+    $iptables -N apt-c2s
+    $iptables -N apt-s2c
+
+	$iptables -A apt-c2s -p tcp --match multiport --dports 80,443  -m time --timestart 02:00 --timestop 03:00 --weekdays Fri -m state --state NEW,ESTABLISHED -j ACCEPT
+	# Protocol P response server to client from port 80
+	$iptables -A apt-s2c -p tcp --match multiport --sports 80,443  -m time --timestart 02:00 --timestop 03:00 --weekdays Fri -m state --state ESTABLISHED     -j ACCEPT
+
+    [ $QUIET = yes ] || echo -n " apt(02-03 Fri)"
+
     [ $QUIET = yes ] || echo "."
 
     $iptables -N one-off-in
